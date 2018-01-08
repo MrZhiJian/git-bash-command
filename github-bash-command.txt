@@ -1,0 +1,38 @@
+1.Windows下安装git  
+2.配置git的识别信息
+	$ git config --golbal user.name 'MrZhiJian'
+	$ git config --global user.email 'xxx@163.com'
+3.创建文件夹
+	$ git mkdir 文件夹名
+4.初始化git仓库
+	$ git init
+5列出当前目录下的所有文件及文件夹
+	$ ls   //列出当前目录下的所有文件及文件夹
+	$ ls -ah //列出当前目录下的所有文件及文件夹，包含隐藏文件
+6.工作区文件增加到暂存区
+	$ git add 文件名
+7.暂存’修改‘提交到版本库
+	$ git commit -m '提交备注'
+8.查询文件状态
+	$ git status
+9.查看文件
+	$ git diff 文件名  //查看文件内容差异
+	$ cat 文件名       //查看文件内容
+10.查看提交记录
+	$ git log //显示最近三次提交
+	$ git log --ptetty=oneline   //每条提交记录以一行信息显示
+11.回到当前版本的前某个版本
+	$ git reset --hard head^   //回到当前版本的上一个版本
+	$ git reset --hard head^^  //回到当前版本的上两个版本  ，前n个版本以此类推
+	$ git reset --hard head~50  //回到当前版本的前50个版本
+	$ git reset --hard 版本号    //回到版本号指定版本  版本号只给出前7位以上长度即可
+12.查看命令历史
+	$ git reflog
+13.撤销修改
+	$ git checkout -- 文件名 //将工作区已修改文件撤回到未修改状态
+	$ git reset head 文件名  //将暂存区已修改但未提交的文件撤回到工作区，在重复上一步骤，即可回到未修改状态
+							//已提交文件则通过版本回退撤到某一节点
+14.删除文件
+	$ git rm 文件名   //删除的文件也可进行撤销操作
+
+	
