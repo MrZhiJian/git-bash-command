@@ -38,12 +38,15 @@
 	$ ssh-keygen -t rsa -C xxx@163.com
 	//将id_rsa.pub文件内容添加GitHub网站SSH Keys页面后即可推送内容到远程
 16.添加远程库
-	$ git remote add origin git@github.com:mrzhijian/git-bash-command
+	$ git remote add origin git@github.com:mrzhijian/git-bash-command.git
 	//origin 表示为远程库命名
 	//mrzhijain 表示个人GitHub帐户名
 	//git-bash-command表示远程仓库名
 17.本地库内容推送到远程库
 	$ git push -u origin master
 	//首次推送用-u表示 将本地内容推送到远程并与远程master分支关联起来，后续推送可简化去掉-u
+18.从远程仓库克隆
+	$ git clone git@github.com:mrzhijian/git-bash-command   //采用ssh协议克隆
+	$ git clone https://github.com/mrzhijian/git-bash-command  //采用HTTP协议克隆
 
 	
