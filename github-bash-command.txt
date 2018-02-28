@@ -48,6 +48,51 @@
 18.从远程仓库克隆
 	$ git clone git@github.com:mrzhijian/git-bash-command   //采用ssh协议克隆
 	$ git clone https://github.com/mrzhijian/git-bash-command  //采用HTTPS协议克隆
-19
+19.创建分支与合并分支
+	$ git checkout -b dev //步骤一：创建分支dev并切换到dev分支
+	$ git branch dev //步骤二：创建分支dev
+	$ git checkout dev //步骤三：切换到分支dev
+						//步骤一 = 步骤二 + 步骤三
+	$ git merge dev //将dev分支合并到当前所在分支
+	$ git branch -d dev //删除dev 分支
+	$ git branch  //查看分支列表
+20.分支合并策略
+	$ git merge dev  //采用fast forward策略快速合并，直接移动指针，不会留存合并记录
+	$ git merge --no-ff -m '合并备注' dev   //禁用fast forward快速合并策略，会留存合并记录
+21.bug分支---隐藏当前工作现场
+	$ git stash  //隐藏工作区更改，当用git status指令查看时显示为发生更改
+	$ git stash list  //显示隐藏的工作区列表
+	$ git stash pop   //回到工作现场并删除stash内容
+	$ git stash apply  //返回工作现场但不删除stash内容
+	$ git stash drop  //删除stash内容
+22.丢弃未合并的分支
+   $ git branch -D dev  //当用普通分支删除指令不能删除未合并的分支时应用此命令
+23.查看远程仓库信息
+	$ git remote   
+	$ git remote -v  //二指令都可以显示远程仓库信息  后者更详细，会显示哪些仓库是可拉取 哪些仓库可推送
+24.创建与远程分支对应的本地分支
+	$ git checkout -b dev origin/dev
+25.建立本地分支与远程分支的链接
+	$ git branch --set-upstream dev origin/dev
+26.创建标签
+	$ git tag v1.0  //在当前分支的最新提交上创建标签
+	$ git tag v1.1 <历史提交id>   //在指定历史提交上创建标签
+	$ git tag   //查看标签列表
+	$ git tag -a v1.2 -m '标签说明' <提交id>   //创建带有说明的标签
+	$ git show v1.0   //查看指定标签的详细信息
+27.操作标签
+	$ git tag -d v1.0   //删除标签
+	$ git push origin v1.0   //推送标签到远程
+	$ git push origin --tags   //一次推送本地尚未推送的全部标签到远程
+	//删除远程标签  先删除本地在删除远程
+	$ git tag -d v1.0   //删除本地
+	$ git push origin :refs/tags/v1.0   //删除远程
+28.忽略特殊文件
+	//忽略特殊文件时需要编写.gitignore文件  参考https://github.com/github/gitignore
+	//.gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！
+	$ git add -f xxx.class   //强制提交.gitignore已忽略的文件
+	$ git check-ignore -v xxx.class   //检查.gitignore文件哪里忽略了xxx.class 文件
+
+
 
 	
