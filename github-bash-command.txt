@@ -48,7 +48,6 @@
 18.从远程仓库克隆
 	$ git clone git@github.com:mrzhijian/git-bash-command   //采用ssh协议克隆
 	$ git clone https://github.com/mrzhijian/git-bash-command  //采用HTTPS协议克隆
-<<<<<<< HEAD
 19.创建分支与合并分支
 	$ git checkout -b dev //步骤一：创建分支dev并切换到dev分支
 	$ git branch dev //步骤二：创建分支dev
@@ -94,9 +93,5 @@
 	$ git add -f xxx.class   //强制提交.gitignore已忽略的文件
 	$ git check-ignore -v xxx.class   //检查.gitignore文件哪里忽略了xxx.class 文件
 
-
-=======
-19asdf
->>>>>>> dev
 
 	
